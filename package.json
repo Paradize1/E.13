@@ -7,7 +7,10 @@
     "start:prod": "npx webpack serve --config webpack.config.js",
     "start:dev": "npx webpack serve --config webpack.config.js",
     "build": "webpack",
-    "prepare": "husky"
+    "prepare": "husky",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "pre-commit": "lint-staged"
   },
   "author": "",
   "license": "ISC",
@@ -29,6 +32,6 @@
     }
   },
   "lint-staged": {
-   "*.(js|jsx)": ["npm run lint:fix", "git add"]
+   "*.js": ["npm run lint:fix", "git add"]
   }
 }
